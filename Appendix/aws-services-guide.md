@@ -6,7 +6,7 @@ Source: AWS Certified AI Practitioner (AIF-C01) Exam Guide v1.4
 # AWS Certified AI Practitioner (AIF-C01) — AWS Services by Domain + Exam Cues
 
 > Catatan: Ini **hanya** layanan/fitur AWS yang **eksplisit disebut** di task statement Domain 1–5 pada Exam Guide.  
-> Exam juga punya **Appendix “In-scope AWS services and features”** (non-exhaustive) di bagian bawah file ini.
+> Exam juga punya **Appendix "In-scope AWS services and features"** (non-exhaustive) di bagian bawah file ini.
 
 ---
 
@@ -14,40 +14,40 @@ Source: AWS Certified AI Practitioner (AIF-C01) Exam Guide v1.4
 
 ### 1) Amazon SageMaker
 **Kapan kepake di soal (cues):**
-- “build / train / deploy ML model”, “managed ML platform”, “endpoint hosting”, “pipeline ML”
-- “MLOps”, “eksperimen”, “monitoring model” (sering nyambung ke Model Monitor)
+- "build / train / deploy ML model", "managed ML platform", "endpoint hosting", "pipeline ML"
+- "MLOps", "eksperimen", "monitoring model" (sering nyambung ke Model Monitor)
 
 ### 2) Amazon Transcribe
 **Cues:**
-- “speech-to-text”, “ubah audio jadi teks”, “transkrip call center/meeting”, “subtitle”
+- "speech-to-text", "ubah audio jadi teks", "transkrip call center/meeting", "subtitle"
 
 ### 3) Amazon Translate
 **Cues:**
-- “machine translation”, “terjemahkan antar bahasa”, “multilingual translation”
+- "machine translation", "terjemahkan antar bahasa", "multilingual translation"
 
 ### 4) Amazon Comprehend
 **Cues:**
-- NLP klasik: “sentiment analysis”, “entity extraction”, “key phrases”, “topic detection”, “text classification”
+- NLP klasik: "sentiment analysis", "entity extraction", "key phrases", "topic detection", "text classification"
 
 ### 5) Amazon Lex
 **Cues:**
-- “chatbot / conversational interface”, “intent”, “slot filling”, “bot untuk customer service”
+- "chatbot / conversational interface", "intent", "slot filling", "bot untuk customer service"
 
 ### 6) Amazon Polly
 **Cues:**
-- “text-to-speech”, “voice output”, “ubah teks jadi suara”, “IVR/voice assistant output”
+- "text-to-speech", "voice output", "ubah teks jadi suara", "IVR/voice assistant output"
 
 ### 7) Amazon SageMaker Data Wrangler
 **Cues:**
-- “data prep / cleaning”, “feature engineering”, “ETL untuk ML”, “preprocessing dataset”
+- "data prep / cleaning", "feature engineering", "ETL untuk ML", "preprocessing dataset"
 
 ### 8) Amazon SageMaker Feature Store
 **Cues:**
-- “central feature repository”, “reuse features”, “online/offline feature store”, “konsistensi feature training vs inference”
+- "central feature repository", "reuse features", "online/offline feature store", "konsistensi feature training vs inference"
 
 ### 9) Amazon SageMaker Model Monitor
 **Cues:**
-- “data drift / concept drift”, “model quality monitoring”, “monitoring setelah deploy”, “alert saat distribusi data berubah”
+- "data drift / concept drift", "model quality monitoring", "monitoring setelah deploy", "alert saat distribusi data berubah"
 
 ---
 
@@ -55,19 +55,19 @@ Source: AWS Certified AI Practitioner (AIF-C01) Exam Guide v1.4
 
 ### 1) Amazon SageMaker JumpStart
 **Cues:**
-- “pre-built models/solutions”, “quickly deploy a model”, “starter templates”, “jumpstart model catalog”
+- "pre-built models/solutions", "quickly deploy a model", "starter templates", "jumpstart model catalog"
 
 ### 2) Amazon Bedrock
 **Cues:**
-- “foundation models”, “genAI managed service”, “akses FM via API”, “build genAI apps without managing infra/model hosting”
+- "foundation models", "genAI managed service", "akses FM via API", "build genAI apps without managing infra/model hosting"
 
 ### 3) PartyRock (Amazon Bedrock Playground)
 **Cues:**
-- “no-code/low-code genAI app prototyping”, “playground”, “build and share simple genAI apps cepat”
+- "no-code/low-code genAI app prototyping", "playground", "build and share simple genAI apps cepat"
 
 ### 4) Amazon Q
 **Cues:**
-- “AI assistant” untuk pekerjaan/dev/business, “chat assistant”, “productivity assistant”, “tanya-jawab berbasis konteks kerja”
+- "AI assistant" untuk pekerjaan/dev/business, "chat assistant", "productivity assistant", "tanya-jawab berbasis konteks kerja"
 
 ---
 
@@ -75,31 +75,31 @@ Source: AWS Certified AI Practitioner (AIF-C01) Exam Guide v1.4
 
 ### 1) Amazon Bedrock (knowledge base / RAG)
 **Cues:**
-- “RAG”, “ground responses on private data”, “knowledge base”, “augment model with your documents” (tanpa full training)
+- "RAG", "ground responses on private data", "knowledge base", "augment model with your documents" (tanpa full training)
 
 ### 2) Agents for Amazon Bedrock
 **Cues:**
-- “agent”, “multi-step task”, “tool use/function calling”, “orchestrate steps”, “plan + act”
+- "agent", "multi-step task", "tool use/function calling", "orchestrate steps", "plan + act"
 
 ### 3) Amazon OpenSearch Service (vector/embeddings store)
 **Cues:**
-- “vector search”, “semantic search”, “kNN”, “store embeddings”, “retrieval layer untuk RAG”
+- "vector search", "semantic search", "kNN", "store embeddings", "retrieval layer untuk RAG"
 
 ### 4) Amazon Aurora (dipakai sebagai penyimpanan embeddings/vector use case di guide)
 **Cues:**
-- “relational database + (vector/embedding) storage”, “RAG storage option in DB”, “Aurora as backend store”
+- "relational database + (vector/embedding) storage", "RAG storage option in DB", "Aurora as backend store"
 
 ### 5) Amazon Neptune
 **Cues:**
-- “graph”, “relationships”, “knowledge graph”, atau disebut sebagai opsi penyimpanan embeddings di guide
+- "graph", "relationships", "knowledge graph", atau disebut sebagai opsi penyimpanan embeddings di guide
 
 ### 6) Amazon DocumentDB (with MongoDB compatibility)
 **Cues:**
-- “document database”, “MongoDB-compatible”, atau disebut sebagai opsi penyimpanan embeddings di guide
+- "document database", "MongoDB-compatible", atau disebut sebagai opsi penyimpanan embeddings di guide
 
 ### 7) Amazon RDS for PostgreSQL
 **Cues:**
-- “PostgreSQL”, “RDS Postgres”, “store embeddings in Postgres (vector extension use cases)”, “RAG storage option in DB”
+- "PostgreSQL", "RDS Postgres", "store embeddings in Postgres (vector extension use cases)", "RAG storage option in DB"
 
 ---
 
@@ -107,67 +107,87 @@ Source: AWS Certified AI Practitioner (AIF-C01) Exam Guide v1.4
 
 ### 1) Guardrails for Amazon Bedrock
 **Cues:**
-- “safety”, “content policy”, “filter harmful content”, “guardrails”, “reduce hallucination risk via constraints”
+- "safety", "content policy", "filter harmful content", "guardrails", "reduce hallucination risk via constraints"
 
 ### 2) Amazon SageMaker Clarify
 **Cues:**
-- “bias detection”, “fairness metrics”, “explainability”, “feature attribution / explanations”
+- "bias detection", "fairness metrics", "explainability", "feature attribution / explanations"
 
 ### 3) SageMaker Model Monitor
 **Cues:**
-- “monitor bias/trustworthiness over time”, “drift monitoring” (di konteks responsible AI)
+- "monitor bias/trustworthiness over time", "drift monitoring" (di konteks responsible AI)
 
 ### 4) Amazon Augmented AI (Amazon A2I)
 **Cues:**
-- “human-in-the-loop review”, “human audit”, “manual review workflow”, “send low-confidence predictions to humans”
+- "human-in-the-loop review", "human audit", "manual review workflow", "send low-confidence predictions to humans"
 
 ### 5) Amazon SageMaker Model Cards
 **Cues:**
-- “model documentation”, “transparency”, “document model purpose/risks/metrics”, “data lineage/citation context”
+- "model documentation", "transparency", "document model purpose/risks/metrics", "data lineage/citation context"
 
 ---
 
 ## Domain 5 — Security, Compliance, and Governance for AI Solutions (services yang disebut)
 
-### 1) AWS Identity and Access Management (IAM)
+### 1) AWS Artifact
 **Cues:**
-- “least privilege”, “roles/policies/permissions”, “who can access model/data”, “access control”
+- "download compliance reports", "SOC/ISO/PCI reports", "ISV compliance report", "agreement", "on-demand access", "email notification untuk update compliance docs"
 
-### 2) Amazon Macie
+### 2) AWS Audit Manager
 **Cues:**
-- “discover sensitive data”, “PII detection”, “data classification (biasanya S3)”, “privacy risk scanning”
+- "collect audit evidence", "otomatisasi pengumpulan evidence", "prepare for audit", "continuous audit", "framework mapping", "audit readiness"
 
-### 3) AWS PrivateLink
+### 3) AWS Config
 **Cues:**
-- “private connectivity”, “avoid public internet”, “VPC endpoint to service”, “data exfiltration risk reduction”
+- "configuration compliance", "resource auditing", "track changes", "configuration drift", "resource compliance", "rules/recording", "evaluasi compliance rule"
 
-### 4) AWS Config
+### 4) AWS CloudTrail
 **Cues:**
-- “configuration compliance”, “resource auditing”, “track changes”, “governance controls”
+- "API activity logging", "who did what/when", "audit trail", "governance logging", "investigasi aktivitas", "API call tracking"
 
 ### 5) Amazon Inspector
 **Cues:**
-- “vulnerability management”, “scan for CVEs”, “security findings”, “hardening workloads”
+- "vulnerability management", "scan for CVEs", "security findings", "hardening workloads", "vulnerability scanning", "assessment celah keamanan"
 
-### 6) AWS Audit Manager
+### 6) AWS Trusted Advisor
 **Cues:**
-- “collect audit evidence”, “prepare for audit”, “compliance reporting support”
+- "best-practice checks", "security/cost/limits", "recommendations to improve posture", "rekomendasi best practices"
 
-### 7) AWS Artifact
+### 7) AWS Identity and Access Management (IAM)
 **Cues:**
-- “download compliance reports”, “SOC/ISO reports”, “security/compliance documentation portal”
+- "least privilege", "roles/policies/permissions", "who can access model/data", "access control", "kontrol akses"
 
-### 8) AWS CloudTrail
+### 8) Amazon Macie
 **Cues:**
-- “API activity logging”, “who did what/when”, “audit trail”, “governance logging”
+- "discover sensitive data", "PII detection", "PII discovery", "data classification (biasanya S3)", "privacy risk scanning", "S3 sensitive data"
 
-### 9) AWS Trusted Advisor
+### 9) AWS Key Management Service (KMS)
 **Cues:**
-- “best-practice checks”, “security/cost/limits”, “recommendations to improve posture”
+- "encryption at rest", "key management", "KMS keys", "manajemen key untuk enkripsi", "customer managed keys"
 
-### 10) (Konsep yang sering jadi jawaban) Encryption + Shared Responsibility Model
+### 10) AWS Secrets Manager
 **Cues:**
-- “encryption at rest/in transit”, “who is responsible for what on AWS”, “security responsibilities split”
+- "secret rotation", "DB credentials", "API keys", "simpan dan rotasi secrets", "automated rotation"
+
+### 11) AWS PrivateLink
+**Cues:**
+- "private connectivity", "avoid public internet", "VPC endpoint to service", "data exfiltration risk reduction", "VPC endpoint", "no public internet", "akses private ke service"
+
+### 12) Amazon CloudWatch
+**Cues:**
+- "monitoring", "metrics", "alarms", "operational visibility", "log monitoring", "performance tracking"
+
+### 13) AWS Well-Architected Tool
+**Cues:**
+- "well-architected review", "pillar checks", "best practices review", "security pillar", "framework assessment"
+
+### 14) Amazon S3 / S3 Glacier
+**Cues:**
+- "log retention", "archive", "data lifecycle", "long-term storage", "compliance storage", "immutable storage (Object Lock)"
+
+### 15) (Konsep yang sering jadi jawaban) Encryption + Shared Responsibility Model
+**Cues:**
+- "encryption at rest/in transit", "who is responsible for what on AWS", "security responsibilities split"
 
 ---
 
