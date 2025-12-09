@@ -1,782 +1,243 @@
-# AWS Services Guide untuk AWS Certified AI Practitioner
+<!--
+Filename suggestion: AIF-C01-services-by-domain.md
+Source: AWS Certified AI Practitioner (AIF-C01) Exam Guide v1.4
+-->
+
+# AWS Certified AI Practitioner (AIF-C01) — AWS Services by Domain + Exam Cues
+
+> Catatan: Ini **hanya** layanan/fitur AWS yang **eksplisit disebut** di task statement Domain 1–5 pada Exam Guide.  
+> Exam juga punya **Appendix “In-scope AWS services and features”** (non-exhaustive) di bagian bawah file ini.
+
+---
+
+## Domain 1 — Fundamentals of AI and ML (services yang disebut)
+
+### 1) Amazon SageMaker
+**Kapan kepake di soal (cues):**
+- “build / train / deploy ML model”, “managed ML platform”, “endpoint hosting”, “pipeline ML”
+- “MLOps”, “eksperimen”, “monitoring model” (sering nyambung ke Model Monitor)
+
+### 2) Amazon Transcribe
+**Cues:**
+- “speech-to-text”, “ubah audio jadi teks”, “transkrip call center/meeting”, “subtitle”
+
+### 3) Amazon Translate
+**Cues:**
+- “machine translation”, “terjemahkan antar bahasa”, “multilingual translation”
+
+### 4) Amazon Comprehend
+**Cues:**
+- NLP klasik: “sentiment analysis”, “entity extraction”, “key phrases”, “topic detection”, “text classification”
+
+### 5) Amazon Lex
+**Cues:**
+- “chatbot / conversational interface”, “intent”, “slot filling”, “bot untuk customer service”
+
+### 6) Amazon Polly
+**Cues:**
+- “text-to-speech”, “voice output”, “ubah teks jadi suara”, “IVR/voice assistant output”
+
+### 7) Amazon SageMaker Data Wrangler
+**Cues:**
+- “data prep / cleaning”, “feature engineering”, “ETL untuk ML”, “preprocessing dataset”
+
+### 8) Amazon SageMaker Feature Store
+**Cues:**
+- “central feature repository”, “reuse features”, “online/offline feature store”, “konsistensi feature training vs inference”
+
+### 9) Amazon SageMaker Model Monitor
+**Cues:**
+- “data drift / concept drift”, “model quality monitoring”, “monitoring setelah deploy”, “alert saat distribusi data berubah”
+
+---
+
+## Domain 2 — Fundamentals of Generative AI (services yang disebut)
+
+### 1) Amazon SageMaker JumpStart
+**Cues:**
+- “pre-built models/solutions”, “quickly deploy a model”, “starter templates”, “jumpstart model catalog”
+
+### 2) Amazon Bedrock
+**Cues:**
+- “foundation models”, “genAI managed service”, “akses FM via API”, “build genAI apps without managing infra/model hosting”
+
+### 3) PartyRock (Amazon Bedrock Playground)
+**Cues:**
+- “no-code/low-code genAI app prototyping”, “playground”, “build and share simple genAI apps cepat”
+
+### 4) Amazon Q
+**Cues:**
+- “AI assistant” untuk pekerjaan/dev/business, “chat assistant”, “productivity assistant”, “tanya-jawab berbasis konteks kerja”
+
+---
+
+## Domain 3 — Applications of Foundation Models (services yang disebut)
+
+### 1) Amazon Bedrock (knowledge base / RAG)
+**Cues:**
+- “RAG”, “ground responses on private data”, “knowledge base”, “augment model with your documents” (tanpa full training)
+
+### 2) Agents for Amazon Bedrock
+**Cues:**
+- “agent”, “multi-step task”, “tool use/function calling”, “orchestrate steps”, “plan + act”
+
+### 3) Amazon OpenSearch Service (vector/embeddings store)
+**Cues:**
+- “vector search”, “semantic search”, “kNN”, “store embeddings”, “retrieval layer untuk RAG”
+
+### 4) Amazon Aurora (dipakai sebagai penyimpanan embeddings/vector use case di guide)
+**Cues:**
+- “relational database + (vector/embedding) storage”, “RAG storage option in DB”, “Aurora as backend store”
+
+### 5) Amazon Neptune
+**Cues:**
+- “graph”, “relationships”, “knowledge graph”, atau disebut sebagai opsi penyimpanan embeddings di guide
+
+### 6) Amazon DocumentDB (with MongoDB compatibility)
+**Cues:**
+- “document database”, “MongoDB-compatible”, atau disebut sebagai opsi penyimpanan embeddings di guide
+
+### 7) Amazon RDS for PostgreSQL
+**Cues:**
+- “PostgreSQL”, “RDS Postgres”, “store embeddings in Postgres (vector extension use cases)”, “RAG storage option in DB”
+
+---
+
+## Domain 4 — Guidelines for Responsible AI (services yang disebut)
+
+### 1) Guardrails for Amazon Bedrock
+**Cues:**
+- “safety”, “content policy”, “filter harmful content”, “guardrails”, “reduce hallucination risk via constraints”
+
+### 2) Amazon SageMaker Clarify
+**Cues:**
+- “bias detection”, “fairness metrics”, “explainability”, “feature attribution / explanations”
+
+### 3) SageMaker Model Monitor
+**Cues:**
+- “monitor bias/trustworthiness over time”, “drift monitoring” (di konteks responsible AI)
+
+### 4) Amazon Augmented AI (Amazon A2I)
+**Cues:**
+- “human-in-the-loop review”, “human audit”, “manual review workflow”, “send low-confidence predictions to humans”
+
+### 5) Amazon SageMaker Model Cards
+**Cues:**
+- “model documentation”, “transparency”, “document model purpose/risks/metrics”, “data lineage/citation context”
+
+---
+
+## Domain 5 — Security, Compliance, and Governance for AI Solutions (services yang disebut)
+
+### 1) AWS Identity and Access Management (IAM)
+**Cues:**
+- “least privilege”, “roles/policies/permissions”, “who can access model/data”, “access control”
+
+### 2) Amazon Macie
+**Cues:**
+- “discover sensitive data”, “PII detection”, “data classification (biasanya S3)”, “privacy risk scanning”
+
+### 3) AWS PrivateLink
+**Cues:**
+- “private connectivity”, “avoid public internet”, “VPC endpoint to service”, “data exfiltration risk reduction”
+
+### 4) AWS Config
+**Cues:**
+- “configuration compliance”, “resource auditing”, “track changes”, “governance controls”
+
+### 5) Amazon Inspector
+**Cues:**
+- “vulnerability management”, “scan for CVEs”, “security findings”, “hardening workloads”
+
+### 6) AWS Audit Manager
+**Cues:**
+- “collect audit evidence”, “prepare for audit”, “compliance reporting support”
+
+### 7) AWS Artifact
+**Cues:**
+- “download compliance reports”, “SOC/ISO reports”, “security/compliance documentation portal”
+
+### 8) AWS CloudTrail
+**Cues:**
+- “API activity logging”, “who did what/when”, “audit trail”, “governance logging”
+
+### 9) AWS Trusted Advisor
+**Cues:**
+- “best-practice checks”, “security/cost/limits”, “recommendations to improve posture”
+
+### 10) (Konsep yang sering jadi jawaban) Encryption + Shared Responsibility Model
+**Cues:**
+- “encryption at rest/in transit”, “who is responsible for what on AWS”, “security responsibilities split”
+
+---
+
+# Appendix (Exam Guide) — In-scope AWS services & features (non-exhaustive)
 
 ## Analytics
-
-### AWS Data Exchange
-**Penjelasan Singkat:** Layanan untuk menemukan, berlangganan, dan menggunakan data pihak ketiga di cloud.
-
-**Kata Kunci di Ujian:**
-- Butuh data eksternal untuk training model
-- Akses dataset pihak ketiga
-- Monetisasi data
-
-**Capability & Usage:**
-- Subscribe ke dataset dari provider eksternal
-- Publish dan monetize data sendiri
-- Integrasi dengan S3, Redshift, dan layanan analytics lainnya
-
----
-
-### Amazon EMR (Elastic MapReduce)
-**Penjelasan Singkat:** Platform big data untuk memproses dan menganalisis data dalam skala besar menggunakan framework seperti Apache Spark, Hadoop.
-
-**Kata Kunci di Ujian:**
-- Big data processing
-- Distributed computing untuk ML
-- Data preprocessing skala besar
-- Apache Spark/Hadoop workloads
-
-**Capability & Usage:**
-- Preprocessing data training dalam skala petabyte
-- Feature engineering untuk dataset besar
-- Distributed machine learning dengan Spark MLlib
-- ETL (Extract, Transform, Load) untuk data pipeline
-
----
-
-### AWS Glue
-**Penjelasan Singkat:** Serverless ETL service untuk data preparation dan integration.
-
-**Kata Kunci di Ujian:**
-- ETL automation
-- Data catalog dan metadata management
-- Serverless data preparation
-- Schema discovery
-
-**Capability & Usage:**
-- Otomatis discover dan catalog data
-- Transform data untuk ML training
-- Crawlers untuk metadata extraction
-- Job scheduling untuk data pipeline
-
----
-
-### AWS Glue DataBrew
-**Penjelasan Singkat:** Visual data preparation tool untuk membersihkan dan normalize data tanpa coding.
-
-**Kata Kunci di Ujian:**
-- No-code data preparation
-- Data cleaning dan normalization
-- Visual data profiling
-- Data quality improvement
-
-**Capability & Usage:**
-- Clean dan normalize data dengan UI visual
-- 250+ pre-built transformations
-- Data quality rules dan anomaly detection
-- Profile data untuk understand patterns
-
----
-
-### AWS Lake Formation
-**Penjelasan Singkat:** Service untuk membangun, secure, dan manage data lake dengan mudah.
-
-**Kata Kunci di Ujian:**
-- Data lake setup dan management
-- Centralized data access control
-- Data governance
-- Fine-grained permissions
-
-**Capability & Usage:**
-- Centralized data catalog
-- Row dan column-level security
-- Data ingestion dari berbagai sources
-- Audit dan compliance tracking
-
----
-
-### Amazon OpenSearch Service
-**Penjelasan Singkat:** Managed service untuk search, analyze, dan visualize data secara real-time.
-
-**Kata Kunci di Ujian:**
-- Log analytics
-- Real-time search
-- Vector search untuk embeddings
-- Semantic search
-
-**Capability & Usage:**
-- Full-text search untuk aplikasi
-- Vector database untuk RAG (Retrieval Augmented Generation)
-- Log dan metrics analysis
-- Real-time monitoring dashboards
-
----
-
-### Amazon QuickSight
-**Penjelasan Singkat:** Business intelligence service untuk membuat visualisasi dan dashboard interaktif.
-
-**Kata Kunci di Ujian:**
-- BI dan data visualization
-- ML-powered insights
-- Dashboard untuk stakeholders
-- Anomaly detection dalam data
-
-**Capability & Usage:**
-- Create interactive dashboards
-- ML Insights untuk anomaly detection
-- Natural language queries (Q)
-- Share insights dengan stakeholders
-
----
-
-### Amazon Redshift
-**Penjelasan Singkat:** Data warehouse untuk analytics dan query data dalam skala petabyte.
-
-**Kata Kunci di Ujian:**
-- Data warehousing
-- OLAP queries
-- Historical data analysis
-- Feature store untuk ML
-
-**Capability & Usage:**
-- Store dan query structured data
-- Integration dengan SageMaker untuk training
-- Redshift ML untuk in-database ML
-- Fast queries untuk large datasets
-
----
+- AWS Data Exchange
+- Amazon EMR
+- AWS Glue
+- AWS Glue DataBrew
+- AWS Lake Formation
+- Amazon OpenSearch Service
+- Amazon QuickSight
+- Amazon Redshift
 
 ## Cloud Financial Management
-
-### AWS Budgets
-**Penjelasan Singkat:** Set custom budgets dan alerts untuk AWS costs dan usage.
-
-**Kata Kunci di Ujian:**
-- Cost control untuk ML projects
-- Budget alerts
-- Training cost monitoring
-- Resource usage tracking
-
-**Capability & Usage:**
-- Set budget thresholds untuk ML workloads
-- Alerts saat mendekati budget limit
-- Track SageMaker training costs
-- Forecast future spending
-
----
-
-### AWS Cost Explorer
-**Penjelasan Singkat:** Visualize dan analyze AWS costs dan usage patterns.
-
-**Kata Kunci di Ujian:**
-- Cost analysis dan optimization
-- ML training cost breakdown
-- Resource utilization patterns
-- Cost forecasting
-
-**Capability & Usage:**
-- Analyze costs per service (SageMaker, Bedrock, dll)
-- Identify cost optimization opportunities
-- Forecast future costs
-- Custom cost reports
-
----
+- AWS Budgets
+- AWS Cost Explorer
 
 ## Compute
-
-### Amazon EC2
-**Penjelasan Singkat:** Virtual servers di cloud untuk berbagai workloads.
-
-**Kata Kunci di Ujian:**
-- Custom ML environments
-- GPU instances untuk training
-- Inference endpoints
-- Self-managed ML infrastructure
-
-**Capability & Usage:**
-- P4/P5 instances untuk deep learning training
-- G5 instances untuk inference
-- Custom ML frameworks dan libraries
-- Flexible compute untuk experimentation
-
----
+- Amazon EC2
 
 ## Containers
-
-### Amazon ECS (Elastic Container Service)
-**Penjelasan Singkat:** Fully managed container orchestration service.
-
-**Kata Kunci di Ujian:**
-- Containerized ML applications
-- Microservices untuk ML
-- Model deployment dengan containers
-- Scalable inference
-
-**Capability & Usage:**
-- Deploy ML models dalam containers
-- Auto-scaling untuk inference workloads
-- Integration dengan ECR untuk container images
-- Serverless dengan Fargate
-
----
-
-### Amazon EKS (Elastic Kubernetes Service)
-**Penjelasan Singkat:** Managed Kubernetes service untuk container orchestration.
-
-**Kata Kunci di Ujian:**
-- Kubernetes-based ML workflows
-- Complex ML pipelines
-- Multi-model deployment
-- Kubeflow integration
-
-**Capability & Usage:**
-- Run Kubeflow untuk ML workflows
-- Distributed training dengan Kubernetes
-- Multi-tenant ML platforms
-- GPU scheduling untuk training
-
----
+- Amazon ECS
+- Amazon EKS
 
 ## Database
-
-### Amazon DocumentDB
-**Penjelasan Singkat:** MongoDB-compatible document database.
-
-**Kata Kunci di Ujian:**
-- Semi-structured data storage
-- JSON document storage
-- Training data dengan flexible schema
-- NoSQL untuk ML applications
-
-**Capability & Usage:**
-- Store training metadata
-- Flexible schema untuk varied data
-- Integration dengan ML pipelines
-- Scalable document storage
-
----
-
-### Amazon DynamoDB
-**Penjelasan Singkat:** Fully managed NoSQL database dengan performance tinggi.
-
-**Kata Kunci di Ujian:**
-- Real-time inference data
-- Feature store
-- Low-latency data access
-- Serverless database
-
-**Capability & Usage:**
-- Store features untuk real-time inference
-- Session data untuk personalization
-- Metadata storage untuk ML models
-- Millisecond latency
-
----
-
-### Amazon ElastiCache
-**Penjelasan Singkat:** In-memory caching service (Redis/Memcached).
-
-**Kata Kunci di Ujian:**
-- Cache inference results
-- Low-latency data access
-- Session management
-- Real-time recommendations
-
-**Capability & Usage:**
-- Cache frequent predictions
-- Store embeddings untuk fast retrieval
-- Session state untuk chatbots
-- Reduce inference latency
-
----
-
-### Amazon MemoryDB
-**Penjelasan Singkat:** Redis-compatible in-memory database dengan durability.
-
-**Kata Kunci di Ujian:**
-- Durable in-memory database
-- Real-time applications
-- Microservices data store
-- Ultra-fast data access
-
-**Capability & Usage:**
-- Primary database untuk real-time ML apps
-- Store feature vectors
-- Durable cache untuk predictions
-- Sub-millisecond latency
-
----
-
-### Amazon Neptune
-**Penjelasan Singkat:** Fully managed graph database.
-
-**Kata Kunci di Ujian:**
-- Graph-based ML
-- Relationship analysis
-- Knowledge graphs
-- Fraud detection networks
-
-**Capability & Usage:**
-- Build knowledge graphs untuk RAG
-- Fraud detection dengan graph analysis
-- Recommendation systems
-- Social network analysis
-
----
-
-### Amazon RDS
-**Penjelasan Singkat:** Managed relational database service.
-
-**Kata Kunci di Ujian:**
-- Structured data storage
-- Transactional data
-- Application database
-- SQL queries untuk features
-
-**Capability & Usage:**
-- Store structured training data
-- Application backend database
-- Feature extraction dengan SQL
-- Integration dengan SageMaker
-
----
+- Amazon DocumentDB (with MongoDB compatibility)
+- Amazon DynamoDB
+- Amazon ElastiCache
+- Amazon MemoryDB
+- Amazon Neptune
+- Amazon RDS
 
 ## Machine Learning
-
-### Amazon Augmented AI (A2I)
-**Penjelasan Singkat:** Human review workflows untuk ML predictions.
-
-**Kata Kunci di Ujian:**
-- Human-in-the-loop
-- Low confidence predictions review
-- Quality assurance untuk ML
-- Human validation
-
-**Capability & Usage:**
-- Review low-confidence predictions
-- Human validation workflows
-- Integration dengan Rekognition, Textract, Comprehend
-- Improve model accuracy dengan human feedback
-
----
-
-### Amazon Bedrock
-**Penjelasan Singkat:** Fully managed service untuk foundation models (FMs) dari berbagai providers.
-
-**Kata Kunci di Ujian:**
-- Foundation models
-- Generative AI applications
-- Model customization tanpa infrastructure
-- Claude, Llama, Titan models
-- RAG (Retrieval Augmented Generation)
-- Knowledge bases
-
-**Capability & Usage:**
-- Access FMs via API (Claude, Llama, Titan, dll)
-- Fine-tune models dengan private data
-- Build RAG applications dengan Knowledge Bases
-- Agents untuk complex tasks
-- Guardrails untuk responsible AI
-- Model evaluation dan comparison
-
----
-
-### Amazon Comprehend
-**Penjelasan Singkat:** NLP service untuk text analysis dan insights extraction.
-
-**Kata Kunci di Ujian:**
-- Sentiment analysis
-- Entity recognition
-- Language detection
-- Topic modeling
-- PII detection
-
-**Capability & Usage:**
-- Analyze customer feedback sentiment
-- Extract entities dari documents
-- Detect PII untuk compliance
-- Custom entity recognition
-- Document classification
-
----
-
-### Amazon Fraud Detector
-**Penjelasan Singkat:** Fully managed fraud detection service menggunakan ML.
-
-**Kata Kunci di Ujian:**
-- Online fraud detection
-- Account takeover prevention
-- Suspicious activity detection
-- Pre-built fraud models
-
-**Capability & Usage:**
-- Detect online payment fraud
-- Identify fake accounts
-- Prevent account takeover
-- Custom fraud detection rules
-- Real-time fraud scoring
-
----
-
-### Amazon Kendra
-**Penjelasan Singkat:** Intelligent search service powered by ML.
-
-**Kata Kunci di Ujian:**
-- Enterprise search
-- Natural language queries
-- Document search
-- Semantic search
-- FAQ retrieval
-
-**Capability & Usage:**
-- Search internal documents
-- Natural language question answering
-- Integration dengan S3, SharePoint, databases
-- Relevance tuning
-- Incremental learning
-
----
-
-### Amazon Lex
-**Penjelasan Singkat:** Service untuk build conversational interfaces (chatbots).
-
-**Kata Kunci di Ujian:**
-- Chatbots dan virtual assistants
-- Voice dan text interfaces
-- Intent recognition
-- Slot filling
-- Multi-turn conversations
-
-**Capability & Usage:**
-- Build customer service chatbots
-- Voice-enabled applications
-- Integration dengan contact centers
-- Multi-language support
-- Automated Speech Recognition (ASR)
-
----
-
-### Amazon Personalize
-**Penjelasan Singkat:** Managed service untuk personalized recommendations.
-
-**Kata Kunci di Ujian:**
-- Recommendation systems
-- Personalization
-- User behavior analysis
-- Real-time recommendations
-- Similar items
-
-**Capability & Usage:**
-- Product recommendations
-- Personalized content ranking
-- Similar items suggestions
-- User segmentation
-- Real-time personalization
-
----
-
-### Amazon Polly
-**Penjelasan Singkat:** Text-to-speech service dengan natural-sounding voices.
-
-**Kata Kunci di Ujian:**
-- Text-to-speech (TTS)
-- Voice synthesis
-- Multiple languages dan voices
-- SSML support
-- Neural voices
-
-**Capability & Usage:**
-- Convert text ke audio
-- Create voice-enabled applications
-- Accessibility features
-- Content narration
-- IVR systems
-
----
-
-### Amazon Q
-**Penjelasan Singkat:** Generative AI-powered assistant untuk business.
-
-**Kata Kunci di Ujian:**
-- Business AI assistant
-- Code generation
-- Data analysis
-- Enterprise knowledge search
-- QuickSight integration
-
-**Capability & Usage:**
-- Answer business questions
-- Generate code dan documentation
-- Data insights dalam QuickSight
-- Connect ke enterprise data sources
-- Secure dan compliant
-
----
-
-### Amazon Rekognition
-**Penjelasan Singkat:** Computer vision service untuk image dan video analysis.
-
-**Kata Kunci di Ujian:**
-- Image analysis
-- Face detection dan recognition
-- Object detection
-- Content moderation
-- Celebrity recognition
-- PPE detection
-
-**Capability & Usage:**
-- Detect objects dalam images/videos
-- Face comparison dan verification
-- Content moderation untuk UGC
-- Text detection dalam images (OCR)
-- Custom labels untuk specific use cases
-
----
-
-### Amazon SageMaker
-**Penjelasan Singkat:** Comprehensive ML platform untuk build, train, dan deploy models.
-
-**Kata Kunci di Ujian:**
-- End-to-end ML platform
-- Model training dan deployment
-- Jupyter notebooks
-- AutoML
-- MLOps
-- Custom models
-
-**Capability & Usage:**
-- Build custom ML models
-- Distributed training
-- Hyperparameter tuning
-- Model hosting dan inference
-- ML pipelines
-- Experiment tracking
-
-**SageMaker Components:**
-
-#### SageMaker Data Wrangler
-- Visual data preparation
-- 300+ built-in transformations
-- Data quality insights
-- Export ke training pipelines
-
-#### SageMaker Feature Store
-- Centralized feature repository
-- Online dan offline feature stores
-- Feature versioning
-- Reduce feature engineering duplication
-
-#### SageMaker Model Monitor
-- Monitor model performance
-- Detect data drift
-- Model quality metrics
-- Automated alerts
-
-#### SageMaker JumpStart
-- Pre-trained models dan solutions
-- One-click deployment
-- Foundation models access
-- Solution templates
-
-#### SageMaker Clarify
-- Bias detection dalam data dan models
-- Model explainability
-- Feature importance
-- Fairness metrics
-
-#### SageMaker Model Cards
-- Model documentation
-- Intended use dan limitations
-- Performance metrics
-- Responsible AI documentation
-
-#### SageMaker Ground Truth
-- Data labeling service
-- Human labeling workflows
-- Active learning
-- Automated labeling
-
-#### SageMaker Model Registry
-- Model versioning
-- Model lineage tracking
-- Approval workflows
-- Centralized model catalog
-
-#### SageMaker Canvas
-- No-code ML
-- Visual interface untuk ML
-- AutoML capabilities
-- Business analysts friendly
-
----
-
-### Amazon Textract
-**Penjelasan Singkat:** OCR service untuk extract text dan data dari documents.
-
-**Kata Kunci di Ujian:**
-- Document processing
-- OCR (Optical Character Recognition)
-- Form extraction
-- Table extraction
-- ID document processing
-
-**Capability & Usage:**
-- Extract text dari scanned documents
-- Parse forms dan tables
-- Process invoices dan receipts
-- ID verification
-- Handwriting recognition
-
----
-
-### Amazon Transcribe
-**Penjelasan Singkat:** Automatic speech recognition (ASR) service.
-
-**Kata Kunci di Ujian:**
-- Speech-to-text
-- Audio transcription
-- Real-time transcription
-- Speaker identification
-- Custom vocabulary
-
-**Capability & Usage:**
-- Transcribe audio files
-- Real-time streaming transcription
-- Medical transcription
-- Call analytics
-- Subtitle generation
-
----
-
-### Amazon Translate
-**Penjelasan Singkat:** Neural machine translation service.
-
-**Kata Kunci di Ujian:**
-- Language translation
-- Multi-language support
-- Real-time translation
-- Batch translation
-- Custom terminology
-
-**Capability & Usage:**
-- Translate text antar 75+ languages
-- Localize content
-- Real-time translation
-- Custom terminology untuk domain-specific terms
-- Batch document translation
-
----
+- Amazon A2I
+- Amazon Bedrock
+- Amazon Comprehend
+- Amazon Fraud Detector
+- Amazon Kendra
+- Amazon Lex
+- Amazon Personalize
+- Amazon Polly
+- Amazon Q
+- Amazon Rekognition
+- Amazon SageMaker
+- Amazon Textract
+- Amazon Transcribe
+- Amazon Translate
 
 ## Management and Governance
+- AWS CloudTrail
+- Amazon CloudWatch
+- AWS Config
+- AWS Trusted Advisor
+- AWS Well-Architected Tool
 
-### AWS CloudTrail
-**Penjelasan Singkat:** Service untuk audit dan logging API calls.
+## Networking and Content Delivery
+- Amazon CloudFront
+- Amazon VPC
 
-**Kata Kunci di Ujian:**
-- Audit logging
-- Compliance tracking
-- Security analysis
-- API call history
-- Governance
+## Security, Identity, and Compliance
+- AWS Artifact
+- AWS Audit Manager
+- AWS IAM
+- Amazon Inspector
+- AWS KMS
+- Amazon Macie
+- AWS Secrets Manager
 
-**Capability & Usage:**
-- Track semua API calls untuk ML services
-- Security audit trails
-- Compliance reporting
-- Detect unauthorized access
-- Integration dengan CloudWatch
-
----
-
-### Amazon CloudWatch
-**Penjelasan Singkat:** Monitoring dan observability service.
-
-**Kata Kunci di Ujian:**
-- Monitoring ML workloads
-- Metrics dan logs
-- Alarms dan notifications
-- Performance tracking
-- Resource utilization
-
-**Capability & Usage:**
-- Monitor SageMaker training jobs
-- Track inference endpoint metrics
-- Set alarms untuk anomalies
-- Log aggregation
-- Custom metrics untuk ML applications
-
----
-
-### AWS Config
-**Penjelasan Singkat:** Service untuk assess, audit, dan evaluate AWS resource configurations.
-
-**Kata Kunci di Ujian:**
-- Configuration compliance
-- Resource inventory
-- Change tracking
-- Compliance rules
-- Configuration history
-
-**Capability & Usage:**
-- Track ML resource configurations
-- Compliance dengan security policies
-- Configuration change notifications
-- Automated remediation
-- Resource relationship tracking
-
----
-
-### AWS Trusted Advisor
-**Penjelasan Singkat:** Automated recommendations untuk cost optimization, security, dan performance.
-
-**Kata Kunci di Ujian:**
-- Best practices recommendations
-- Cost optimization
-- Security checks
-- Performance improvements
-- Resource utilization
-
-**Capability & Usage:**
-- Identify underutilized ML resources
-- Security vulnerability checks
-- Cost optimization recommendations
-- Performance improvement suggestions
-- Service limit monitoring
-
----
-
-### AWS Well-Architected Tool
-**Penjelasan Singkat:** Tool untuk review workloads terhadap AWS best practices.
-
-**Kata Kunci di Ujian:**
-- Architecture review
-- Best practices assessment
-- ML workload optimization
-- Six pillars review
-- Risk identification
-
-**Capability & Usage:**
-- Review ML architecture
-- Identify architectural risks
-- Best practices untuk ML workloads
-- Improvement recommendations
-- Documentation dan reporting
-
----
-
-## Tips Ujian
-
-### Service Selection Strategy:
-1. **Data Preparation:** Glue, DataBrew, EMR
-2. **Training:** SageMaker, Bedrock (fine-tuning)
-3. **Pre-built AI:** Rekognition, Comprehend, Textract, Transcribe, Translate, Polly, Lex
-4. **Generative AI:** Bedrock, Q
-5. **Specialized ML:** Personalize, Fraud Detector, Kendra
-6. **Monitoring:** CloudWatch, SageMaker Model Monitor
-7. **Governance:** CloudTrail, Config, Trusted Advisor
-8. **Cost Management:** Cost Explorer, Budgets
-
-### Common Exam Scenarios:
-- **Butuh generative AI tanpa training:** → Bedrock
-- **Custom ML model:** → SageMaker
-- **No-code ML:** → SageMaker Canvas
-- **Image analysis:** → Rekognition
-- **Text analysis:** → Comprehend
-- **Document extraction:** → Textract
-- **Chatbot:** → Lex
-- **Recommendations:** → Personalize
-- **Search:** → Kendra
-- **Human review:** → A2I
-- **Data labeling:** → Ground Truth
-- **Bias detection:** → SageMaker Clarify
-- **Model monitoring:** → SageMaker Model Monitor
+## Storage
+- Amazon S3
+- Amazon S3 Glacier
