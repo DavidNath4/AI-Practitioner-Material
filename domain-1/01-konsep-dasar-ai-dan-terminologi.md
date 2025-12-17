@@ -2,26 +2,35 @@
 
 ## Pengantar
 
-Domain 1 dari AWS Certified AI Practitioner berfokus pada pemahaman konsep-konsep dasar kecerdasan buatan (Artificial Intelligence/AI) dan terminologi yang digunakan dalam ekosistem AI. Materi ini mencakup Task Statement 1.1 yang menjelaskan konsep dan terminologi dasar AI.
+Domain 1 dari AWS Certified AI Practitioner berfokus pada pemahaman konsep-konsep dasar kecerdasan buatan (Artificial Intelligence/AI) dan terminologi yang digunakan dalam ekosistem AI. Materi ini mencakup **Task Statement 1.1: Explain basic AI concepts and terminologies** berdasarkan material transcript resmi dari AWS Skill Builder course.
+
+**Sumber Material:** material-transcript-1-1.txt (5 lessons)
+**Exam Weight:** 20% dari total ujian
+**AWS Services Covered:** Amazon Bedrock, SageMaker Ground Truth, Amazon Mechanical Turk, AWS DeepRacer
 
 ## 1. Apa itu Artificial Intelligence (AI)?
 
 **Artificial Intelligence (AI)** adalah bidang ilmu komputer yang didedikasikan untuk menyelesaikan masalah kognitif yang umumnya dikaitkan dengan kecerdasan manusia, seperti:
-- Pembelajaran (Learning)
-- Kreasi/Penciptaan (Creation)
-- Pengenalan gambar (Image Recognition)
+- **Learning (Pembelajaran)** - Sistem dapat belajar dari data
+- **Creation (Kreasi)** - Menghasilkan konten original
+- **Image Recognition (Pengenalan Gambar)** - Memproses dan memahami visual data
 
 ### Tujuan AI
 
-Tujuan utama AI adalah menciptakan sistem yang dapat belajar sendiri (self-learning system) yang mampu mengambil makna dari data. Sistem AI dapat merespons pertanyaan dengan bermakna dan bahkan menciptakan konten original seperti teks dan gambar.
+Tujuan utama AI adalah menciptakan **self-learning system** yang dapat mengambil makna dari data. Sistem AI modern seperti Alexa dan ChatGPT dapat:
+- Merespons pertanyaan dengan bermakna
+- Menciptakan konten original seperti teks dan gambar
+- Memproses data dalam jumlah besar dengan kecepatan tinggi
 
 ### Keunggulan AI
 
-1. **Pemrosesan Data Cepat**: AI dapat memproses data dalam jumlah besar dengan sangat cepat, memungkinkan penyelesaian masalah kompleks seperti deteksi fraud secara real-time.
+1. **Konsistensi Performa 24/7**: AI dapat bekerja sepanjang waktu tanpa penurunan performa, tidak seperti manusia yang memerlukan istirahat.
 
-2. **Otomasi Tugas Repetitif**: AI dapat melakukan tugas-tugas yang berulang dan monoton, meningkatkan efisiensi bisnis dengan membebaskan karyawan untuk melakukan pekerjaan yang lebih kreatif.
+2. **Pemrosesan Data Cepat**: AI dapat memproses data dalam jumlah besar dengan sangat cepat, memungkinkan penyelesaian masalah kompleks seperti deteksi fraud secara real-time.
 
-3. **Pengenalan Pola dan Prediksi**: AI sangat powerful dalam menemukan pola dalam data dan memperkirakan tren, membantu bisnis membuat keputusan yang lebih cerdas dan bereaksi lebih cepat terhadap masalah.
+3. **Otomasi Tugas Repetitif**: AI dapat melakukan tugas-tugas yang berulang dan monoton, meningkatkan efisiensi bisnis dengan membebaskan karyawan untuk melakukan pekerjaan yang lebih kreatif.
+
+4. **Pengenalan Pola dan Prediksi**: AI sangat powerful dalam menemukan pola dalam data dan memperkirakan tren, membantu bisnis membuat keputusan yang lebih cerdas dan bereaksi lebih cepat terhadap masalah.
 
 ## 2. Machine Learning (ML)
 
@@ -70,41 +79,44 @@ Tujuan utama AI adalah menciptakan sistem yang dapat belajar sendiri (self-learn
 ## 4. Aplikasi AI di Berbagai Industri
 
 ### Industri Medis
-- Membantu membaca X-ray dan scan
-- Membuat diagnosis
-- CDC menggunakan AI untuk memprediksi pandemi dan wabah di seluruh dunia
+- **Diagnosis Medis**: Membantu membaca X-ray dan scan untuk membuat diagnosis
+- **Prediksi Pandemi**: CDC menggunakan AI untuk memprediksi pandemi dan wabah di seluruh dunia
+- **Resource Allocation**: Mengirim tenaga medis dan sumber daya ke lokasi yang membutuhkan
 
 ### Manufaktur
-- Koch Industries menggunakan AI dengan computer vision untuk memantau jalur perakitan
-- Mempertahankan kualitas produk
-- Memantau data sensor untuk memprediksi kapan peralatan memerlukan maintenance sebelum gagal
+- **Quality Control**: Koch Industries menggunakan AI dengan computer vision untuk memantau jalur perakitan dan mempertahankan kualitas produk
+- **Predictive Maintenance**: Memantau data sensor untuk memprediksi kapan peralatan memerlukan maintenance sebelum gagal
+- **Operational Efficiency**: Mengurangi downtime dan meningkatkan produktivitas
 
 ### Layanan Pelanggan
-- Sistem chat dan pencarian yang dapat mengenali bahasa pelanggan
-- Mengarahkan pelanggan ke solusi yang tepat
-- Rekomendasi produk berdasarkan riwayat aktivitas belanja
+- **Intelligent Support**: Sistem chat dan pencarian yang dapat mengenali bahasa pelanggan dan mengarahkan ke solusi yang tepat
+- **Product Recommendations**: Rekomendasi produk berdasarkan riwayat aktivitas belanja
+- **Automated Assistance**: Mengurangi beban customer service dengan otomasi
 
 ### Media dan Entertainment
-- Discovery menggunakan AI untuk membuat rekomendasi konten yang dipersonalisasi berdasarkan riwayat tontonan
-- TickeTek menggunakan AI untuk mengirim rekomendasi pertunjukan dan acara yang disesuaikan dengan minat unik pelanggan
+- **Content Personalization**: Discovery menggunakan AI untuk membuat rekomendasi konten yang dipersonalisasi berdasarkan riwayat tontonan
+- **Event Recommendations**: TickeTek menggunakan AI untuk mengirim rekomendasi pertunjukan dan acara yang disesuaikan dengan minat unik pelanggan
+- **Content Creation**: AI dapat membantu dalam produksi dan editing konten
 
 ### Transportasi
-- Perusahaan taksi menggunakan AI untuk memposisikan mobil di lokasi dan waktu ketika pelanggan kemungkinan membutuhkannya
-- Forecasting demand yang lebih akurat
+- **Demand Forecasting**: Perusahaan taksi menggunakan AI untuk memposisikan mobil di lokasi dan waktu ketika pelanggan kemungkinan membutuhkannya
+- **Route Optimization**: Optimasi rute untuk efisiensi bahan bakar dan waktu
+- **Autonomous Systems**: Pengembangan kendaraan otonom
 
 ### Keuangan
-- MasterCard dapat mendeteksi transaksi fraud dengan menggunakan AI untuk mendeteksi aktivitas anomali
-- Deteksi pola transaksi yang tidak biasa
+- **Fraud Detection**: MasterCard dapat mendeteksi transaksi fraud dengan menggunakan AI untuk mendeteksi aktivitas anomali
+- **Risk Assessment**: Analisis risiko kredit dan investasi
+- **Algorithmic Trading**: Otomasi perdagangan berdasarkan analisis pasar
 
 ### Human Resources
-- Memproses resume
-- Mencocokkan kandidat dengan posisi yang terbuka
-- Membantu hiring manager menjadi lebih produktif
+- **Resume Processing**: Memproses resume dan mencocokkan kandidat dengan posisi yang terbuka
+- **Productivity Enhancement**: Membantu hiring manager menjadi lebih produktif
+- **Employee Analytics**: Analisis performa dan kepuasan karyawan
 
 ### Marketing
-- Menargetkan pelanggan dengan promosi yang kemungkinan besar mereka inginkan
-- Menghindari spam
-- Personalisasi komunikasi
+- **Targeted Campaigns**: Menargetkan pelanggan dengan promosi yang kemungkinan besar mereka inginkan
+- **Spam Prevention**: Menghindari spam dengan targeting yang lebih akurat
+- **Personalization**: Personalisasi komunikasi dan pengalaman pelanggan
 
 ## 5. Jenis-Jenis Output AI
 
@@ -114,9 +126,14 @@ Tujuan utama AI adalah menciptakan sistem yang dapat belajar sendiri (self-learn
 
 **Contoh - Regression Analysis:**
 - Menggunakan teknik yang disebut regression analysis
-- Model AI dapat memproses data historis (time series data) dan memprediksi nilai masa depan
-- Contoh kasus: Toko perlu tahu berapa banyak tenaga penjualan yang dibutuhkan pada hari tertentu untuk melayani pelanggan
+- Model AI dapat memproses data historis (**time series data**) dan memprediksi nilai masa depan
+- **Contoh Praktis**: Toko perlu tahu berapa banyak tenaga penjualan yang dibutuhkan pada hari tertentu untuk melayani pelanggan
 - Model AI dapat menganalisis pola di masa lalu dan memperkirakan berapa banyak pelanggan yang akan ada di toko pada hari tertentu di masa depan
+
+**Karakteristik Inference:**
+- Bersifat probabilistik, bukan deterministik
+- Akurasi tergantung pada kualitas data training
+- Dapat digunakan untuk real-time atau batch processing
 
 ### Deteksi Anomali (Anomaly Detection)
 
@@ -172,7 +189,21 @@ Aplikasi chat customer support di mana pelanggan mengetik dalam bahasa Spanyol s
 - Dimulai dengan prompt: "Generate a song from these lyrics: In order to pass the exam, you'll need to know AI"
 - Response: Lirik lagu lengkap dengan dua verse, chorus, bridge, dan outro, dan sebagian besar berima
 
-## 6. Jenis-Jenis Data untuk Machine Learning
+## 6. Machine Learning Fundamentals
+
+### Cara Kerja Machine Learning
+
+**Machine Learning** adalah ilmu mengembangkan algoritma dan model statistik yang digunakan sistem komputer untuk melakukan tugas kompleks tanpa instruksi eksplisit.
+
+**Proses Training ML:**
+1. **Input Data**: Algoritma ML menerima data sebagai input yang terdiri dari **features** (fitur)
+2. **Training**: Algoritma dilatih dengan **known data** untuk mengidentifikasi korelasi
+3. **Parameter Adjustment**: Parameter internal model disesuaikan hingga menghasilkan output yang diharapkan secara konsisten
+4. **Inference**: Model yang terlatih dapat membuat prediksi akurat dari data baru
+
+**Features**: Dapat berupa kolom dalam tabel atau pixel dalam gambar yang digunakan sebagai input untuk model.
+
+## 7. Jenis-Jenis Data untuk Machine Learning
 
 ### Data Terstruktur (Structured Data)
 
@@ -242,7 +273,7 @@ Model machine learning dapat menemukan pola dalam data ini dan menggunakannya un
 **Storage:**
 Tergantung pada sampling rate, data time series yang ditangkap untuk periode panjang bisa menjadi sangat besar dan disimpan di Amazon S3 untuk training model.
 
-## 7. Proses Training Model Machine Learning
+## 8. Proses Training Model Machine Learning
 
 ### Algoritma dan Parameter
 
@@ -255,31 +286,35 @@ Atau dalam kasus tinggi dan berat: h = mw + b
 
 Dimana:
 - w = variabel independen (berat)
-- h = variabel dependen (tinggi)
+- h = variabel dependen (tinggi)  
 - m = slope (kemiringan)
 - b = intercept
 ```
 
 **Parameter model** (m dan b) disesuaikan secara iteratif selama proses training untuk menemukan model yang paling sesuai.
 
-### Menentukan Best Fit
+### Proses Training Iteratif
 
-Untuk menentukan best fit, kita mencari nilai parameter yang meminimalkan error. Dalam kasus ini, error adalah jarak antara data point dan garis.
+**Langkah-langkah Training:**
+1. **Initialization**: Set parameter awal
+2. **Forward Pass**: Hitung prediksi dengan parameter saat ini
+3. **Error Calculation**: Bandingkan prediksi dengan actual output
+4. **Parameter Update**: Sesuaikan parameter untuk mengurangi error
+5. **Iteration**: Ulangi hingga konvergensi atau kriteria berhenti tercapai
 
 ### Model Artifacts
 
-Proses training menghasilkan **model artifacts**, yang biasanya terdiri dari:
-- Trained parameters
-- Model definition yang menjelaskan cara menghitung inference
-- Metadata lainnya
+Proses training menghasilkan **model artifacts**, yang terdiri dari:
+- **Trained parameters**: Nilai parameter yang telah dioptimasi
+- **Model definition**: Deskripsi cara menghitung inference
+- **Metadata**: Informasi tambahan tentang model
 
-**Storage:**
-Model artifacts biasanya disimpan di Amazon S3 dan dikemas bersama dengan inference code untuk membuat deployable model.
+**Storage di AWS:**
+- Model artifacts disimpan di **Amazon S3**
+- Dikemas bersama dengan **inference code** untuk deployment
+- **Inference code**: Software yang mengimplementasikan model dengan membaca artifacts
 
-**Inference Code:**
-Software yang mengimplementasikan model dengan membaca artifacts.
-
-## 8. Opsi Hosting Model
+## 9. Opsi Hosting Model
 
 ### Real-Time Inference
 
@@ -315,7 +350,7 @@ Software yang mengimplementasikan model dengan membaca artifacts.
 **Perbedaan Utama:**
 Dengan batch, computing resources hanya berjalan saat memproses batch, kemudian shut down. Dengan real-time inferencing, beberapa compute resources selalu berjalan dan tersedia untuk memproses request.
 
-## 9. Gaya Machine Learning (ML Styles)
+## 10. Gaya Machine Learning (ML Styles)
 
 ### Supervised Learning (Pembelajaran Terawasi)
 
@@ -340,7 +375,8 @@ Model menghasilkan probabilitas bahwa gambar adalah ikan (inference tidak selalu
 - Model mungkin perlu dilatih dengan ribuan atau jutaan gambar sebelum dapat membuat prediksi yang reliable
 
 **Solusi AWS:**
-Amazon SageMaker Ground Truth - layanan labeling yang dapat memanfaatkan crowdsourcing service bernama Amazon Mechanical Turk yang menyediakan akses ke pool besar tenaga kerja terjangkau yang tersebar di seluruh dunia.
+- **Amazon SageMaker Ground Truth**: Layanan labeling yang dapat memanfaatkan crowdsourcing
+- **Amazon Mechanical Turk**: Menyediakan akses ke pool besar tenaga kerja terjangkau yang tersebar di seluruh dunia (500,000+ independent contractors)
 
 ### Unsupervised Learning (Pembelajaran Tidak Terawasi)
 
@@ -365,10 +401,12 @@ Algoritma unsupervised learning dilatih pada data yang memiliki fitur tetapi tid
 
 1. **Clustering:**
    - Mengidentifikasi berbagai jenis network traffic untuk memprediksi potensi insiden keamanan
+   - Segmentasi pelanggan berdasarkan perilaku
 
 2. **Anomaly Detection:**
    - Model ML memeriksa data yang dikumpulkan dari sensor
    - Dapat mendeteksi bahwa sensor suhu di sumur minyak mungkin gagal jika data yang dilaporkan jauh di luar rentang normal
+   - Deteksi fraud dalam transaksi keuangan
 
 ### Reinforcement Learning (Pembelajaran Penguatan)
 
@@ -383,13 +421,14 @@ Metode machine learning yang berfokus pada pengambilan keputusan otonom oleh age
 - Untuk mendorong pembelajaran selama training, learning agent harus diizinkan kadang-kadang mengejar tindakan yang mungkin tidak menghasilkan reward
 
 **Contoh - AWS DeepRacer:**
-Amazon menawarkan mobil balap model bernama AWS DeepRacer yang dapat Anda ajarkan untuk mengemudi di lintasan balap.
+Amazon menawarkan mobil balap model bernama **AWS DeepRacer** yang dapat Anda ajarkan untuk mengemudi di lintasan balap. Ini adalah platform pembelajaran untuk memahami reinforcement learning.
 
-Komponen:
-- **Agent**: Mobil
-- **Environment**: Lintasan
-- **Action**: Mobil bergerak maju di lintasan
+**Komponen DeepRacer:**
+- **Agent**: Mobil DeepRacer
+- **Environment**: Lintasan balap
+- **Action**: Mobil bergerak maju, belok kiri/kanan, mengatur kecepatan
 - **Goal**: Tetap di lintasan dan menyelesaikan course seefisien mungkin
+- **Reward**: Diberikan ketika mobil tetap di lintasan dan mencapai checkpoint
 
 **Perbedaan dengan Unsupervised Learning:**
 - Keduanya bekerja tanpa labeled data
@@ -397,7 +436,7 @@ Komponen:
 - Reinforcement learning memiliki predetermined end goal
 - Meskipun mengambil pendekatan eksplorasi, eksplorasi terus divalidasi dan ditingkatkan untuk meningkatkan probabilitas mencapai end goal
 
-## 10. Masalah Umum dalam Machine Learning
+## 11. Masalah Umum dalam Machine Learning
 
 ### Overfitting (Kelebihan Fitting)
 
@@ -465,7 +504,7 @@ Pertimbangkan model machine learning untuk secara otomatis menyetujui aplikasi p
    - Model perlu terus dievaluasi dengan memeriksa hasilnya untuk fairness
 
 
-## 11. Deep Learning: Neural Networks
+## 12. Deep Learning: Neural Networks
 
 ### Struktur Neural Networks
 
@@ -531,25 +570,30 @@ Pertimbangkan model machine learning untuk secara otomatis menyetujui aplikasi p
 - Model deep learning self-learn patterns, sehingga tidak memerlukan banyak pekerjaan dalam memilih dan mengekstrak fitur
 - Namun, biaya infrastruktur mereka jauh lebih tinggi
 
-## 12. Generative AI dan Large Language Models
+## 13. Generative AI dan Large Language Models
 
 ### Apa itu Generative AI?
 
-**Generative AI** dicapai dengan menggunakan model deep learning yang telah di-pre-train pada dataset yang sangat besar yang berisi string teks atau, dalam istilah AI, sequences.
+**Generative AI** adalah langkah selanjutnya dalam artificial intelligence yang dapat:
+- Melakukan percakapan yang tampak cerdas
+- Menghasilkan konten original seperti cerita, gambar, video, dan bahkan musik
+- Dicapai dengan menggunakan model deep learning yang telah di-pre-train pada dataset yang sangat besar
 
 ### Transformer Neural Networks
 
-**Karakteristik:**
-- Mengubah input sequence (dalam Gen AI dikenal sebagai **prompt**) menjadi output sequence (response terhadap prompt Anda)
+**Karakteristik Transformer:**
+- Mengubah input sequence (dalam Gen AI dikenal sebagai **prompt**) menjadi output sequence (response terhadap prompt)
 - Neural networks tradisional memproses elemen sequence secara berurutan satu kata pada satu waktu
 - **Transformers memproses sequence secara paralel**, yang mempercepat training dan memungkinkan dataset yang jauh lebih besar untuk digunakan
+- Berdasarkan paper "Attention Is All You Need"
 
 ### Large Language Models (LLMs)
 
 **Karakteristik:**
-- Berisi banyak miliaran fitur
+- Berisi **miliaran parameter/fitur**
 - Menangkap berbagai pengetahuan manusia yang luas
 - Dengan semua training ini, model besar sangat fleksibel dalam tugas yang dapat mereka lakukan
+- **Outperform** pendekatan ML lainnya untuk natural language processing
 
 **Keunggulan LLMs:**
 1. **Pemahaman Bahasa:**
@@ -557,7 +601,7 @@ Pertimbangkan model machine learning untuk secara otomatis menyetujui aplikasi p
    - Dapat membaca artikel panjang dan merangkumnya
 
 2. **Generasi Teks:**
-   - Hebat dalam menghasilkan teks yang mirip dengan cara manusia
+   - Hebat dalam menghasilkan teks yang mirip dengan cara manusia menulis
    - Baik dalam terjemahan bahasa
    - Dapat menulis cerita, surat, artikel, dan puisi original
 
@@ -565,8 +609,9 @@ Pertimbangkan model machine learning untuk secara otomatis menyetujui aplikasi p
    - Mengetahui bahasa pemrograman komputer
    - Dapat menulis kode untuk software developer
 
-4. **Performa:**
-   - Mengungguli pendekatan ML lainnya untuk natural language processing
+4. **Fleksibilitas:**
+   - Sangat fleksibel dalam berbagai tugas
+   - Dapat beradaptasi dengan berbagai domain
 
 ### Amazon Bedrock
 
@@ -575,17 +620,22 @@ Pertimbangkan model machine learning untuk secara otomatis menyetujui aplikasi p
 **Cara Kerja:**
 1. Mulai dengan prompt
 2. Model menghasilkan response yang komprehensif
-3. Dapat menghasilkan berbagai jenis konten (teks, kode, dll)
+3. Dapat menghasilkan berbagai jenis konten (teks, kode, gambar, musik)
 
-**Contoh Penggunaan:**
-- Prompt: "Explain large language models"
-- Model akan memberikan penjelasan yang detail dan mudah dipahami
+**Contoh dari Material Transcript:**
+- **Prompt**: "Generate a song from these lyrics: In order to pass the exam, you'll need to know AI"
+- **Response**: Lirik lagu lengkap dengan dua verse, chorus, bridge, dan outro, dan sebagian besar berima
+
+**Foundation Models Available:**
+- Amazon Titan models
+- Meta models
+- Leading AI startups models
 
 ### Mencoba Generative AI
 
 Untuk mencoba Amazon Bedrock secara gratis, Anda dapat membangun AI app sendiri di **partyrock.aws**.
 
-## 13. Rangkuman Konsep Kunci
+## 14. Rangkuman Konsep Kunci
 
 ### Hierarki AI
 
@@ -639,7 +689,7 @@ Artificial Intelligence (AI)
 9. **Amazon Bedrock** - Layanan untuk mengakses foundation models
 10. **PartyRock.aws** - Platform untuk membangun AI app secara gratis
 
-## 14. Tips untuk Ujian AWS Certified AI Practitioner
+## 15. Tips untuk Ujian AWS Certified AI Practitioner
 
 ### Konsep yang Harus Dikuasai
 
@@ -702,4 +752,46 @@ Artificial Intelligence (AI)
 
 ---
 
-**Catatan:** Materi ini disusun berdasarkan transkrip resmi dari AWS Training untuk AWS Certified AI Practitioner (AIF-C01). Pastikan untuk terus mempelajari materi lainnya dan berlatih dengan soal-soal latihan untuk persiapan ujian yang optimal.
+## 16. AWS Services Mapping dan Exam Cues
+
+### AWS Services yang Disebutkan dalam Material Transcript
+
+| Service | Exam Cue | Use Case |
+|---------|-----------|----------|
+| **Amazon S3** | "primary source for training data", "object storage" | Menyimpan training data dan model artifacts |
+| **Amazon RDS** | "relational database", "structured data" | Database untuk data terstruktur |
+| **Amazon Redshift** | "data warehouse" | Analytics dan data warehousing |
+| **Amazon DynamoDB** | "NoSQL", "semi-structured data" | Database untuk data semi-terstruktur |
+| **Amazon DocumentDB** | "MongoDB compatibility" | Document database |
+| **Amazon SageMaker Ground Truth** | "data labeling service" | Labeling data untuk supervised learning |
+| **Amazon Mechanical Turk** | "crowdsourcing", "500,000+ contractors" | Human workforce untuk labeling |
+| **AWS DeepRacer** | "reinforcement learning", "model race car" | Platform pembelajaran RL |
+| **Amazon Bedrock** | "foundation models", "generative AI" | Akses ke foundation models |
+| **PartyRock.aws** | "build AI app for free" | Platform prototyping generative AI |
+
+### Key Exam Concepts dari Material Transcript
+
+**Terminologi Penting:**
+- **Inference**: Prediksi yang dibuat AI (educated guess, probabilistic)
+- **Features**: Kolom dalam tabel atau pixel dalam gambar
+- **Model Artifacts**: Trained parameters + model definition + metadata
+- **Supervised Learning**: Training dengan labeled data
+- **Unsupervised Learning**: Training tanpa labels
+- **Reinforcement Learning**: Learning melalui trial and error dengan rewards
+- **Overfitting**: Model performs better pada training data daripada new data
+- **Underfitting**: Model tidak dapat menentukan meaningful relationship
+- **Bias**: Disparitas dalam performa model across different groups
+
+**Data Types:**
+- **Structured**: Rows dan columns (CSV, RDS, Redshift)
+- **Semi-structured**: JSON, key-value pairs (DynamoDB, DocumentDB)
+- **Unstructured**: Images, video, text (S3)
+- **Time Series**: Data dengan timestamp untuk trend prediction
+
+**Hosting Options:**
+- **Real-time Inference**: Persistent endpoint, low latency
+- **Batch Inference**: Offline processing, cost-effective
+
+---
+
+**Catatan:** Materi ini disusun berdasarkan material-transcript-1-1.txt dari AWS Skill Builder course untuk AWS Certified AI Practitioner (AIF-C01). Semua contoh dan terminologi mengikuti standar AWS resmi.ntuk AWS Certified AI Practitioner (AIF-C01). Pastikan untuk terus mempelajari materi lainnya dan berlatih dengan soal-soal latihan untuk persiapan ujian yang optimal.
