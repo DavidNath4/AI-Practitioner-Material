@@ -2,45 +2,65 @@
 
 ## Pengantar Domain 5
 
-Domain 5 dari AWS Certified AI Practitioner berfokus pada keamanan dan tata kelola sistem AI. Task Statement 5.1 secara khusus membahas metode-metode untuk mengamankan sistem AI di lingkungan AWS.
+Domain 5 dari AWS Certified AI Practitioner berfokus pada keamanan dan tata kelola sistem AI dengan bobot 14% dari total ujian. Task Statement 5.1 secara khusus membahas metode-metode untuk mengamankan sistem AI di lingkungan AWS, mencakup AWS Shared Responsibility Model, IAM fundamentals, enkripsi data, keamanan jaringan, ancaman keamanan spesifik AI, dan fitur keamanan SageMaker.
 
-## 1. Model Tanggung Jawab Bersama AWS (AWS Shared Responsibility Model)
+**Referensi Material:** Domain 5 - Task Statement 5.1 dari material transcript AWS Skill Builder course
+
+## 1. AWS Shared Responsibility Model untuk Sistem AI
 
 ### Konsep Dasar
 
-Keamanan dan kepatuhan di AWS adalah tanggung jawab bersama antara AWS dan pelanggan. Model ini membagi tanggung jawab menjadi dua kategori utama:
+**Definisi:** Keamanan dan kepatuhan di AWS adalah tanggung jawab bersama antara AWS dan pelanggan. Model ini menunjukkan pembagian tanggung jawab pelanggan dan AWS, yang umumnya disebut sebagai tanggung jawab pelanggan (security IN the cloud) dan tanggung jawab AWS (security OF the cloud).
+
+**Infrastruktur Global AWS:**
+AWS melindungi dan mengamankan infrastruktur global, termasuk:
+- AWS Regions
+- Availability Zones  
+- Data centers hingga keamanan fisik bangunan
+- Hardware, software, dan komponen jaringan yang menjalankan layanan AWS
 
 ### Tanggung Jawab AWS (Security OF the Cloud)
 
-AWS bertanggung jawab untuk:
-- Infrastruktur global (AWS Regions, Availability Zones, data centers)
-- Keamanan fisik gedung dan fasilitas
-- Hardware, software, dan komponen jaringan
-- Host operating system dan lapisan virtualisasi
-- Komponen jaringan AWS
+AWS bertanggung jawab untuk mengamankan:
+- **Infrastruktur Global:** AWS Regions, Availability Zones, dan data centers
+- **Keamanan Fisik:** Gedung dan fasilitas data center
+- **Hardware dan Software:** Server fisik, host operating systems, lapisan virtualisasi
+- **Komponen Jaringan:** AWS networking components yang menjalankan layanan AWS
+- **Layanan Terkelola:** Infrastruktur yang mendasari layanan AWS
 
 ### Tanggung Jawab Pelanggan (Security IN the Cloud)
 
 Pelanggan bertanggung jawab untuk:
-- Konfigurasi layanan dan aplikasi dengan benar
-- Keamanan data
-- Pembatasan akses (access control)
-- Penggunaan enkripsi
-- Mengikuti praktik terbaik keamanan
+- **Konfigurasi Layanan:** Mengkonfigurasi layanan dan aplikasi dengan benar
+- **Keamanan Data:** Memastikan data aman dan terenkripsi
+- **Kontrol Akses:** Mengelola dan membatasi akses ke resource
+- **Enkripsi:** Menggunakan enkripsi untuk data at rest dan in transit
+- **Best Practices:** Mengikuti praktik terbaik keamanan AWS
+- **Aplikasi:** Keamanan aplikasi yang berjalan di atas layanan AWS
 
-### Tingkat Tanggung Jawab Berdasarkan Layanan
+### Tingkat Tanggung Jawab Berdasarkan Layanan AI/ML
 
-**Contoh 1: Amazon EC2**
-- Pelanggan bertanggung jawab penuh atas:
+**Contoh 1: Amazon EC2 untuk AI Models**
+- **Tanggung Jawab Pelanggan:**
   - Operating system instance
-  - Security patches
-  - Scaling
-  - Keamanan aplikasi yang berjalan
+  - Security patches dan updates
+  - Scaling policies
+  - Keamanan aplikasi AI yang berjalan
+  - Konfigurasi security groups
+  - Model deployment dan management
 
 **Contoh 2: SageMaker Serverless Inferencing**
-- AWS mengelola seluruh infrastruktur
-- Pelanggan tidak perlu mengelola instance atau scaling policies
-- Manajemen minimal dari pelanggan
+- **Tanggung Jawab AWS:**
+  - Mengelola seluruh infrastruktur underlying
+  - Automatic scaling
+  - Patching dan maintenance
+- **Tanggung Jawab Pelanggan:**
+  - Model artifacts dan data
+  - IAM permissions
+  - Endpoint configuration
+  - Monitoring dan logging
+
+**Prinsip Umum:** Semakin terkelola layanannya, semakin sedikit tanggung jawab pelanggan untuk infrastruktur, namun tanggung jawab untuk data dan konfigurasi tetap ada.
 
 
 ## 2. AWS Identity and Access Management (IAM)
@@ -361,7 +381,9 @@ Berdasarkan AWS Shared Responsibility Model, pelanggan bertanggung jawab untuk:
 - Memberikan lapisan keamanan tambahan
 
 
-## 7. Amazon SageMaker Role Manager
+## 7. Fitur Keamanan Amazon SageMaker
+
+### Amazon SageMaker Role Manager
 
 ### Tujuan
 
@@ -518,18 +540,59 @@ Misalkan seseorang secara tidak sengaja diberikan izin read ke S3 bucket Anda:
 
 ### Jenis Keys di AWS KMS
 
-**1. AWS-Managed Keys**
-- Dikelola oleh AWS
-- Rotasi otomatis
-- Tidak dapat mengubah key policies
+**1. Service-Owned Keys**
+- Dimiliki dan dikelola sepenuhnya oleh layanan AWS
+- Digunakan untuk enkripsi default (S3, DynamoDB, SageMaker)
+- Tidak ada kontrol pelanggan
+- Tidak ada biaya tambahan
+- Tidak terlihat di akun pelanggan
 
-**2. Customer-Managed Keys**
-- Dikelola oleh pelanggan
-- Kontrol penuh atas:
-  - Key policies
-  - IAM policies
-  - Key rotation
+**2. AWS-Managed Keys**
+- Dikelola oleh AWS untuk akun pelanggan
+- Rotasi otomatis setiap tahun
+- Tidak dapat mengubah key policies
+- Terlihat di akun pelanggan
+- Format nama: aws/service-name (contoh: aws/s3)
+
+**3. Customer-Managed Keys**
+- **Kontrol Penuh Pelanggan:**
+  - Key policies dan IAM policies
+  - Key rotation (manual atau otomatis)
   - Enable/disable key
+  - Key deletion
+- **Keuntungan:**
+  - Granular access control
+  - Audit trail lengkap
+  - Cross-account access
+  - Custom key specifications
+- **Biaya:** Dikenakan biaya per key per bulan
+
+### Perbandingan Customer-Managed vs Service-Managed Keys
+
+| Aspek | Service-Managed | Customer-Managed |
+|-------|----------------|------------------|
+| **Kontrol** | Tidak ada | Penuh |
+| **Biaya** | Gratis | $1/bulan per key |
+| **Rotasi** | Otomatis | Dapat dikonfigurasi |
+| **Audit** | Terbatas | Lengkap via CloudTrail |
+| **Cross-Account** | Tidak | Ya |
+| **Key Policies** | Tidak dapat diubah | Dapat dikustomisasi |
+
+### Kapan Menggunakan Customer-Managed Keys
+
+**Gunakan Customer-Managed Keys ketika:**
+- Memerlukan kontrol penuh atas encryption keys
+- Compliance requirements memerlukan key management
+- Perlu cross-account access
+- Memerlukan custom key rotation schedule
+- Audit trail lengkap diperlukan
+- Granular access control diperlukan
+
+**Gunakan Service-Managed Keys ketika:**
+- Enkripsi sederhana sudah cukup
+- Tidak ada requirements khusus untuk key management
+- Ingin mengurangi kompleksitas dan biaya
+- Default security sudah memenuhi kebutuhan
 
 ### Integrasi dengan Layanan AWS
 
@@ -687,109 +750,117 @@ Pelanggan bertanggung jawab untuk mengelola konfigurasi keamanan infrastruktur c
 - Mengurangi risiko eksfiltrasi data
 
 
-## 12. Kerentanan Keamanan Spesifik AI (AI-Specific Security Vulnerabilities)
+## 12. Ancaman Keamanan Spesifik AI (AI-Specific Security Threats)
+
+**Referensi Material:** Task Statement 5.1 Lesson 5 - AI systems memiliki kerentanan spesifik yang harus dipahami untuk mendeteksi dan memitigasi potensi ancaman keamanan.
 
 ### 1. Data Poisoning (Keracunan Data)
 
 **Konsep:**
-- Model AI belajar perilakunya dari training data
-- Jika penyerang mendapat akses ke training data, mereka dapat memanipulasinya
+Model AI belajar perilakunya dari training data. Jika penyerang jahat (malicious actor) mendapat akses ke training data, mereka dapat memperkenalkan data yang akan mengubah prediksi model.
 
-**Contoh Serangan:**
-- **Skenario:** Model deteksi fraud dilatih pada transaksi keuangan yang dilabeli sebagai fraud dan not fraud
-- **Serangan:** Penyerang menambahkan transaksi fraudulent tertentu yang dilabeli sebagai not fraud
+**Contoh Serangan dari Material Transcript:**
+- **Skenario:** Model deteksi fraud dilatih pada transaksi keuangan yang dilabeli sebagai "fraud" dan "not fraud"
+- **Serangan:** Penyerang menambahkan transaksi fraudulent tertentu ke data yang dilabeli sebagai "not fraud"
 - **Hasil:** Model akan salah mengklasifikasikan transaksi tersebut
-- **Dampak:** Penyerang dapat melakukan fraud tanpa terdeteksi
+- **Dampak:** Penyerang dapat melakukan fraud tanpa terdeteksi oleh sistem
 
-**Mitigasi:**
+**Strategi Mitigasi:**
 - Amankan dan batasi akses ke training data
-- Monitor kualitas data secara rutin
+- Monitor kualitas data secara rutin dengan automated tools
 - Validasi data sebelum digunakan untuk training
 - Gunakan data validation set yang terpisah
+- Implementasi data lineage tracking untuk audit trail
 
 ### 2. Adversarial Inputs (Input Adversarial)
 
 **Konsep:**
-- Penyerang memanipulasi input data dengan cara yang halus namun dirancang dengan hati-hati
-- Menyebabkan model salah mengklasifikasi
+Bahkan tanpa mendapat akses ke training data, penyerang dapat menyebabkan model membuat kesalahan. Penyerang dapat sedikit memanipulasi input data dengan cara yang akan menyebabkan model salah mengklasifikasinya.
 
-**Contoh Serangan:**
+**Contoh Serangan dari Material Transcript:**
 - **Skenario:** Perusahaan menggunakan model face recognition untuk mengenali karyawan
-- **Serangan:** Penyerang membuat modifikasi halus pada gambar mereka
+- **Serangan:** Penyerang membuat modifikasi halus namun dirancang dengan hati-hati pada gambar mereka
 - **Hasil:** Model mengenali mereka sebagai orang lain
-- **Dampak:** Akses tidak sah ke sistem
+- **Dampak:** Akses tidak sah ke sistem perusahaan
 
-**Karakteristik:**
+**Karakteristik Serangan:**
 - Modifikasi sangat halus, tidak terlihat oleh mata manusia
 - Dirancang secara khusus untuk menipu model
 - Tidak memerlukan akses ke training data
+- Dikenal sebagai "adversarial inputs"
 
-**Mitigasi:**
-- Latih model dengan adversarial input
-- Validasi dan inspeksi input dari pengguna
-- Cari pola yang tidak biasa
-- Implementasi input sanitization
+**Strategi Mitigasi:**
+- Latih model dengan adversarial examples untuk meningkatkan robustness
+- Validasi dan inspeksi input data dari pengguna
+- Cari pola yang tidak biasa dalam input
+- Implementasi input sanitization dan validation
+- Monitor untuk anomali dalam input patterns
 
 ### 3. Model Inversion (Inversi Model)
 
 **Konsep:**
-- Penyerang canggih dapat menyebabkan output model untuk menyimpulkan training data
-- Dengan terus memberi data ke model dan mempelajari output
+Penyerang canggih (sophisticated attacker) dapat menyebabkan output model untuk menyimpulkan training data. Dikenal sebagai model inversion, penyerang terus memberi data ke model dan mempelajari output.
 
-**Contoh Serangan:**
-- **Skenario:** Model face recognition dilatih pada gambar karyawan, output adalah nama dan confidence score
-- **Serangan:** Penyerang berulang kali memberi gambar wajah dengan perubahan
-- **Hasil:** Ketika output adalah nama karyawan dengan confidence score tinggi, penyerang memiliki gambar yang baik dari karyawan
-- **Dampak:** Penyerang dapat berpura-pura menjadi karyawan
+**Contoh Serangan dari Material Transcript:**
+- **Skenario:** Model facial recognition dilatih pada gambar karyawan, outputnya adalah nama karyawan dan confidence score
+- **Serangan:** Penyerang berulang kali memberi model gambar wajah, membuat perubahan hingga output adalah nama karyawan dengan confidence score tinggi
+- **Hasil:** Hacker kemudian memiliki gambar yang baik dari karyawan
+- **Dampak:** Penyerang dapat menggunakan gambar tersebut untuk menyamar sebagai karyawan
 
-**Teknik Lanjutan:**
+**Teknik Lanjutan - Reverse Model Creation:**
 - Dengan cukup pasangan input-output, penyerang dapat membuat model baru yang bekerja terbalik
 - Model baru dilatih pada output model asli
 - Digunakan untuk menyimpulkan training input data
+- Memungkinkan ekstraksi informasi sensitif dari training dataset
 
 
 ### 4. Model Extraction (Ekstraksi Model)
 
 **Konsep:**
-- Penyerang melakukan reverse engineering pada model
-- Membuat model mereka sendiri yang sangat mirip dengan model asli
+Hacker dapat melakukan reverse engineering pada model dan membuat model mereka sendiri yang sangat mirip dengan model asli. Semakin banyak informasi yang dimiliki hacker tentang model, semakin akurat salinan mereka.
 
-**Faktor yang Mempengaruhi:**
-- Semakin banyak informasi yang dimiliki penyerang tentang model
-- Semakin akurat salinan mereka
+**Proses Serangan:**
+- Penyerang menganalisis input-output patterns
+- Melakukan reverse engineering pada model behavior
+- Membuat replika model dengan functionality serupa
+- Mencuri intellectual property dan competitive advantage
 
-**Dampak:**
+**Dampak Bisnis:**
 - Pencurian intellectual property
-- Kompetitor dapat menggunakan model serupa
-- Kehilangan keunggulan kompetitif
+- Kompetitor dapat menggunakan model serupa tanpa investasi R&D
+- Kehilangan keunggugan kompetitif
+- Potensi kerugian finansial yang signifikan
 
-**Mitigasi:**
-- Batasi dan kontrol akses ke model
+**Strategi Mitigasi:**
+- Batasi dan kontrol akses ke model dengan IAM policies
 - Jangan berikan informasi yang tidak perlu di output model
 - Monitor penggunaan model untuk pola yang mencurigakan
+- Implementasi rate limiting untuk API calls
+- Gunakan model watermarking jika tersedia
 
 ### 5. Prompt Injection (Injeksi Prompt)
 
 **Konsep:**
-- Serangan khusus untuk Large Language Models (LLMs)
-- Penyerang memberikan instruksi berbahaya ke model dalam prompt
-- Tujuan: mempengaruhi output model
+Large Language Models rentan terhadap jenis serangan yang dikenal sebagai prompt injection. Dalam serangan ini, penyerang memberikan instruksi berbahaya (malicious instructions) ke model dalam prompt dengan tujuan mempengaruhi outputnya.
 
-**Contoh Serangan:**
+**Contoh Serangan dari Material Transcript:**
 - Penyerang dapat meminta LLM untuk mengabaikan atau mengubah prompt template
 - Memungkinkan penyerang mendapatkan informasi sensitif
-- Memanipulasi perilaku model
+- Memanipulasi perilaku model untuk tujuan berbahaya
+- Bypass security controls yang telah ditetapkan
 
-**Karakteristik:**
-- Memanfaatkan cara LLM memproses instruksi
-- Dapat bypass security controls
-- Sulit dideteksi tanpa monitoring yang tepat
+**Karakteristik Serangan:**
+- Memanfaatkan cara LLM memproses dan mengikuti instruksi
+- Dapat menimpa (override) security controls
+- Sulit dideteksi tanpa monitoring dan filtering yang tepat
+- Spesifik untuk generative AI dan LLM systems
 
-**Mitigasi:**
-- Ajari LLM untuk mendeteksi prompt injection menggunakan pola serangan kunci
-- Return response "prompt attack detected"
-- Validasi dan sanitasi input pengguna
-- Implementasi prompt templates yang aman
+**Strategi Mitigasi:**
+- **Deteksi Otomatis:** Ajari LLM untuk mendeteksi prompt injection menggunakan key attack patterns
+- **Response Filtering:** Return response "prompt attack detected" ketika serangan terdeteksi
+- **Input Validation:** Validasi dan sanitasi input pengguna sebelum processing
+- **Prompt Templates:** Implementasi prompt templates yang aman dan terstruktur
+- **Guardrails:** Gunakan AWS Guardrails for Amazon Bedrock untuk content filtering
 
 
 ## 13. Strategi Mitigasi Keamanan AI
@@ -1074,6 +1145,101 @@ Katalog untuk menyimpan dan mengelola versi model dalam model groups.
 - Audit trail lengkap
 - Simplified deployment
 - Governance dan compliance
+
+### Amazon SageMaker Model Monitor untuk Keamanan
+
+**Referensi Material:** Task Statement 5.1 Lesson 5 - SageMaker Model Monitor memonitor kualitas model machine learning Amazon SageMaker di production.
+
+**Fungsi Keamanan:**
+
+1. **Continuous Quality Monitoring:**
+   - Monitor kualitas model secara real-time setelah deployment
+   - Deteksi dini untuk deviasi kualitas model
+   - Setup alert otomatis untuk anomali
+
+2. **Data Drift Detection:**
+   - Membandingkan data dan model dengan baselines
+   - Menghasilkan statistik dan metrik
+   - Visible di SageMaker Studio dan dikirim ke CloudWatch
+
+3. **Security Anomaly Detection:**
+   - Monitor untuk perubahan yang tidak biasa dalam prediksi model
+   - Investigasi untuk menentukan root cause (kualitas data rendah atau serangan)
+   - Tindakan korektif segera
+
+**Komponen Monitoring:**
+- **Amazon CloudWatch Logs:** Mengumpulkan file monitoring status model
+- **S3 Storage:** Menyimpan log files ke bucket yang ditentukan
+- **Automated Alerts:** Notifikasi ketika kualitas model mencapai threshold preset
+- **Dashboard Visualization:** Lihat hasil di SageMaker Studio
+
+**Setup Process:**
+1. **Enable Data Capture:** Menangkap inference input dan output
+2. **Create Baseline:** Menggunakan training dataset sebagai baseline
+3. **Schedule Monitoring Jobs:** Generate statistik dan perbandingan
+4. **View Results:** Analisis di SageMaker Studio dan ambil tindakan
+
+### Keamanan Network dengan VPC
+
+**Referensi Material:** Task Statement 5.1 Lesson 4 - Pelanggan bertanggung jawab mengelola konfigurasi keamanan infrastruktur cloud mereka.
+
+**Default Behavior dan Risiko:**
+- SageMaker Studio dan Notebook instances diluncurkan di VPC yang dikelola SageMaker
+- Direct internet access diizinkan secara default
+- **Risiko:** Kemungkinan download kode berbahaya yang dapat mengirim data keluar
+
+**Best Practice - Gunakan VPC Sendiri:**
+
+1. **Buat VPC di Akun Anda:**
+   - Konfigurasi VPC sesuai kebutuhan keamanan
+   - Tentukan subnet dan routing yang aman
+
+2. **Specify VPC saat Launch:**
+   - Untuk SageMaker Studio
+   - Untuk Notebook instances
+   - Elastic Network Interface (ENI) dibuat di VPC Anda
+
+3. **Network Controls:**
+   - Security Groups untuk traffic control
+   - Network Access Control Lists (NACLs)
+   - Network Firewalls untuk advanced filtering
+
+**VPC-Only Mode:**
+- Tentukan "VPC only" untuk network access type
+- Mencegah SageMaker memberikan akses internet ke notebook instances
+- Maksimal security dengan trade-off connectivity
+
+**VPC Interface Endpoints dengan AWS PrivateLink:**
+
+**Konsep:**
+- Menghubungkan VPC langsung ke layanan AWS tanpa melalui internet publik
+- Menggunakan AWS PrivateLink untuk koneksi private
+- Semua traffic tetap di private network AWS
+
+**Layanan yang Didukung untuk AI/ML:**
+- Amazon S3 (untuk data dan model artifacts)
+- Amazon CloudWatch (untuk monitoring dan logging)
+- SageMaker Runtime (untuk inference)
+- SageMaker API (untuk management operations)
+- AWS KMS (untuk key management)
+
+**Keuntungan:**
+- **Keamanan Maksimal:** Traffic tidak pernah melewati internet publik
+- **Compliance:** Memenuhi requirements untuk data yang sangat sensitif
+- **Performance:** Latensi rendah dan bandwidth tinggi
+- **Cost Control:** Mengurangi data transfer costs
+
+**Implementasi:**
+1. Buat VPC Interface Endpoints untuk layanan yang diperlukan
+2. Configure security groups untuk endpoints
+3. Update route tables jika diperlukan
+4. Test connectivity dari SageMaker instances
+
+**Best Practice:**
+- Gunakan untuk workload yang memerlukan keamanan tinggi
+- Combine dengan VPC-only mode untuk isolasi maksimal
+- Monitor endpoint usage dan performance
+- Implement least privilege access untuk endpoints
 
 ## 17. Amazon SageMaker Model Cards
 
@@ -1378,70 +1544,120 @@ Portal terpusat yang dapat diakses dari SageMaker console untuk melihat, mencari
 - Quick troubleshooting
 
 
-## Ringkasan Task Statement 5.1
+## Ringkasan Task Statement 5.1: Metode Keamanan Sistem AI
 
 ### Konsep Kunci yang Harus Dipahami
 
-**1. Shared Responsibility Model**
-- AWS bertanggung jawab untuk keamanan OF the cloud
-- Pelanggan bertanggung jawab untuk keamanan IN the cloud
-- Pemahaman pembagian tanggung jawab sangat penting
+**1. AWS Shared Responsibility Model untuk AI Systems**
+- **AWS (Security OF the Cloud):** Infrastruktur, hardware, software, networking components
+- **Pelanggan (Security IN the Cloud):** Konfigurasi layanan, keamanan data, kontrol akses, enkripsi
+- **Tingkat Tanggung Jawab:** Bervariasi berdasarkan layanan (EC2 vs SageMaker Serverless)
 
-**2. Identity and Access Management**
-- IAM adalah fondasi keamanan AWS
-- Root user harus dilindungi dengan MFA
-- Gunakan IAM users, groups, dan roles dengan principle of least privilege
-- IAM Identity Center untuk multi-account management
+**2. IAM Fundamentals untuk AI/ML**
+- **Root User:** Harus dilindungi dengan MFA, gunakan hanya untuk tugas administratif
+- **IAM Users:** Individual users dengan kredensial unik
+- **IAM Groups:** Organisasi users berdasarkan job function
+- **IAM Roles:** Temporary credentials untuk enhanced security
+- **IAM Policies:** Identity-based dan resource-based policies
+- **Multi-Factor Authentication (MFA):** Wajib untuk keamanan maksimal
 
-**3. Enkripsi dan Key Management**
-- Enkripsi at rest dan in transit adalah wajib
-- AWS KMS untuk kontrol penuh atas encryption keys
-- Banyak layanan AWS mengenkripsi secara default
+**3. Data Encryption dengan AWS KMS**
+- **Encryption at Rest:** Data tersimpan di storage
+- **Encryption in Transit:** Data yang bergerak melalui jaringan (TLS/HTTPS)
+- **Service-Owned Keys:** Default encryption, tidak ada kontrol pelanggan
+- **AWS-Managed Keys:** Dikelola AWS, rotasi otomatis
+- **Customer-Managed Keys:** Kontrol penuh, granular access control
 
-**4. Network Security**
-- Gunakan VPC sendiri untuk kontrol maksimal
-- VPC-only mode untuk keamanan tinggi
-- VPC interface endpoints untuk private connectivity
+**4. Network Security dengan VPC dan PrivateLink**
+- **VPC Configuration:** Gunakan VPC sendiri untuk kontrol maksimal
+- **VPC-Only Mode:** Mencegah internet access untuk keamanan tinggi
+- **VPC Interface Endpoints:** Private connectivity ke layanan AWS
+- **AWS PrivateLink:** Traffic tidak melewati internet publik
+- **Security Groups dan NACLs:** Network-level access control
 
-**5. AI-Specific Vulnerabilities**
-- Data poisoning
-- Adversarial inputs
-- Model inversion
-- Model extraction
-- Prompt injection
+**5. AI-Specific Security Threats**
+- **Data Poisoning:** Manipulasi training data untuk mengubah prediksi model
+- **Adversarial Inputs:** Input yang dimanipulasi untuk menipu model
+- **Model Inversion:** Ekstraksi training data dari model output
+- **Model Extraction:** Reverse engineering untuk mencuri intellectual property
+- **Prompt Injection:** Serangan khusus untuk Large Language Models
 
-**6. Monitoring dan Governance**
-- CloudTrail untuk audit logging
-- SageMaker Model Monitor untuk quality monitoring
-- Model Registry untuk version control
-- Model Cards untuk dokumentasi
-- ML Lineage Tracking untuk reproducibility
-- Feature Store untuk feature management
-- Model Dashboard untuk centralized management
+**6. SageMaker Security Features**
+- **SageMaker Role Manager:** Simplified IAM role creation dengan pre-configured personas
+- **SageMaker Model Monitor:** Continuous monitoring untuk quality dan security anomalies
+- **VPC Integration:** Network isolation dan private connectivity
+- **Data Capture:** Monitoring inference input/output untuk security analysis
 
-### Best Practices Keamanan AI
+### Best Practices Keamanan AI (Berdasarkan Material Transcript)
 
-1. **Selalu gunakan MFA** untuk semua akun penting
-2. **Terapkan principle of least privilege** untuk semua akses
-3. **Enkripsi semua data** at rest dan in transit
-4. **Monitor secara kontinyu** untuk anomali dan drift
-5. **Validasi input** dari pengguna
-6. **Train dengan adversarial examples** untuk robustness
-7. **Re-train secara berkala** dengan data baru
-8. **Track semua artifacts** untuk reproducibility
-9. **Dokumentasi lengkap** dengan Model Cards
-10. **Gunakan VPC** untuk network isolation
+**Proactive Security Measures:**
+1. **Secure and Limit Access:** Terapkan principle of least privilege dengan IAM policies
+2. **Enable MFA:** Wajib untuk root user dan critical accounts
+3. **Encrypt All Data:** At rest dan in transit menggunakan AWS KMS
+4. **Use VPC Configuration:** Gunakan VPC sendiri dengan VPC-only mode untuk keamanan tinggi
+5. **Block Public Access:** Gunakan S3 Block Public Access untuk mencegah data exposure
 
-### Persiapan Ujian
+**AI-Specific Security Practices:**
+6. **Validate Input Data:** Inspeksi dan validasi input dari users untuk unusual patterns
+7. **Train with Adversarial Examples:** Meningkatkan robustness model terhadap adversarial attacks
+8. **Frequent Re-training:** Train model secara berkala dengan data baru untuk undo corrupted data damage
+9. **Monitor Model Predictions:** Gunakan SageMaker Model Monitor untuk deteksi anomali dan drift
+10. **Limit Model Information:** Jangan berikan informasi yang tidak perlu di model output
 
-Untuk Task Statement 5.1, pastikan Anda memahami:
-- Cara kerja IAM dan komponen-komponennya
-- Perbedaan antara identity-based dan resource-based policies
-- Cara menggunakan AWS KMS untuk enkripsi
-- Kerentanan keamanan spesifik AI dan cara mitigasinya
-- Fitur-fitur SageMaker untuk governance dan monitoring
-- Best practices untuk mengamankan ML workflows
+**Governance dan Compliance:**
+11. **Track All Artifacts:** Gunakan Model Registry, Model Cards, dan ML Lineage Tracking
+12. **Audit Logging:** Enable CloudTrail untuk semua API calls
+13. **Continuous Monitoring:** Setup automated alerts untuk security deviations
+14. **Documentation:** Gunakan Model Cards untuk immutable record of model information
+15. **Network Isolation:** Implementasi VPC interface endpoints untuk private connectivity
+
+### Persiapan Ujian AWS AI Practitioner
+
+**Fokus Utama untuk Task Statement 5.1:**
+
+1. **AWS Shared Responsibility Model:**
+   - Pahami pembagian tanggung jawab antara AWS dan pelanggan
+   - Ketahui perbedaan tanggung jawab berdasarkan jenis layanan (EC2 vs SageMaker)
+
+2. **IAM Fundamentals:**
+   - Root user best practices dan MFA requirements
+   - IAM users, groups, roles, dan policies
+   - Identity-based vs resource-based policies
+   - IAM Identity Center untuk workforce identities
+
+3. **Data Encryption:**
+   - Encryption at rest vs in transit
+   - Service-owned vs AWS-managed vs customer-managed keys
+   - AWS KMS capabilities dan use cases
+   - Default encryption di layanan AWS
+
+4. **Network Security:**
+   - VPC configuration untuk SageMaker
+   - VPC-only mode dan trade-offs
+   - VPC interface endpoints dan AWS PrivateLink
+   - Security groups dan network access controls
+
+5. **AI-Specific Security Threats:**
+   - Data poisoning attack scenarios
+   - Adversarial inputs dan model manipulation
+   - Model inversion dan data extraction
+   - Prompt injection untuk LLMs
+   - Mitigation strategies untuk setiap threat
+
+6. **SageMaker Security Features:**
+   - SageMaker Role Manager personas dan permissions
+   - Model Monitor untuk security anomaly detection
+   - VPC integration dan private connectivity
+   - Audit logging dengan CloudTrail
+
+**Tips Ujian:**
+- Fokus pada practical scenarios dan use cases
+- Pahami kapan menggunakan customer-managed vs service-managed keys
+- Ketahui AI-specific threats dan appropriate mitigation strategies
+- Understand trade-offs antara security dan usability
+- Familiar dengan SageMaker security features dan best practices
 
 ---
 
-**Catatan:** Materi ini mencakup Task Statement 5.1 dari Domain 5. Lesson berikutnya akan membahas Task Statement 5.2 dan topik-topik lanjutan dalam keamanan dan governance sistem AI.
+**Referensi Material:** Task Statement 5.1 dari Domain 5 - Security, Compliance, and Governance (14% bobot ujian)
+**Sumber:** Material transcript AWS Skill Builder course untuk AWS Certified AI Practitioner
